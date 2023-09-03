@@ -41,6 +41,6 @@ const Users = postgressConnection.define(
 
 // Establish the one-to-many relationship
 
-// Users.belongsTo(Organizations, { foreignKey: "organization_id" });
-// Users.hasOne(Organizations, { foreignKey: "owner_id" });
+Users.belongsTo(Organizations, { foreignKey: "organization_id" });
+Users.hasOne(Organizations, { foreignKey: "owner_id" });
 export default Users;
