@@ -9,6 +9,7 @@ import errorHandler from "./middleware/errorHandler";
 import fourOhFour from "./middleware/fourOhFour";
 import root from "./routes/root";
 import dbInit from "./database/init";
+import auth from "./routes/auth";
 dbInit();
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(morgan("tiny"));
 
 // Apply routes before error handling
 app.use("/", root);
+app.use("/auth", auth);
 
 // Apply error handling last
 app.use(fourOhFour);
